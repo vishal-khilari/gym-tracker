@@ -54,7 +54,7 @@ fun Screen() {
         }
         item {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf("Morning", "Evening").forEach { FilterChip(slot == it, { _ -> slot = it }, { Text(if (it == "Morning") "☀ Morning" else "🌙 Evening") }) }
+                listOf("Morning", "Evening").forEach { s -> FilterChip(selected = slot == s, onClick = { slot = s }, label = { Text(if (s == "Morning") "☀ Morning" else "🌙 Evening") }) }
             }
         }
         item {
