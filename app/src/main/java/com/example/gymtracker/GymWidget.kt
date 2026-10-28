@@ -1,5 +1,6 @@
 package com.example.gymtracker
 import android.content.Context
+import android.content.Intent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -20,7 +21,7 @@ class GymWidget : GlanceAppWidget() {
         provideContent {
             Column(
                 GlanceModifier.fillMaxSize().background(ColorProvider(Color(0xFF1B1B2F))).padding(12.dp)
-                    .clickable(actionStartActivity<MainActivity>()),
+                    .clickable(actionStartActivity(Intent(context, MainActivity::class.java))),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
